@@ -1,0 +1,44 @@
+.menu
+  z-index: 10000
+  display: flex
+  top: 100px
+  width: 100%
+  position: fixed
+  // border-bottom: solid 1px #bfbfbf
+  border-top: solid 1px #737373
+  border-bottom: solid 15px #000;
+  ul, li
+    margin: 0
+    padding: 0
+  ul
+    background: #236b6b
+    list-style: none
+    padding-left: 50px
+    width: 360px;
+  li
+    float: left
+    position: relative
+    width: auto
+    border-left: solid 1px white
+    &:first-child
+     border-left: none
+    a
+      background: #5e8c90
+      color: #FFFFFF
+      display: block
+      font: bold 16px/20px sans-serif
+      padding: 14px 14px
+      text-align: center
+      text-decoration: none
+      transition: all .25s ease
+    .router-link-active
+      background: #33995e
+      &:hover
+        background: #16a085
+
+@media only screen and (min-width: 1064px)
+  .menu
+    li
+      a
+        font: bold 16px/20px sans-serif
+        padding: 10px

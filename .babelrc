@@ -1,0 +1,16 @@
+{
+  "presets": [
+    ["es2015", { "modules": false }]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        ["istanbul", {"exclude": [
+          "src/**/*.spec.js",
+          "config/karma/karma.entry.js",
+          "src/polyfills.js"
+        ]}]
+      ]
+    }
+  }
+}
