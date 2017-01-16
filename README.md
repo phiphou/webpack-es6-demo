@@ -1,91 +1,82 @@
-<p align="center">
-    <a href="https://circleci.com/gh/phiphou/webpack-vue-demo">
-      <img src="https://img.shields.io/circleci/project/phiphou/webpack-vue-demo.svg?maxAge=0" alt="CircleCI">
-    </a>
-    <a href="https://badge.fury.io/gh/phiphou%2Fwebpack-vue-demo">
-      <img src="https://badge.fury.io/gh/phiphou%2Fwebpack-vue-demo.svg" alt="GitHub version">
-    </a>
-    <a href="https://david-dm.org/phiphou/webpack-vue-demo">
-      <img src="https://david-dm.org/phiphou/webpack-vue-demo.svg" alt="Dependency Status">
-    </a>
-    <a href="https://david-dm.org/phiphou/webpack-vue-demo?type=dev">
-      <img src="https://david-dm.org/phiphou/webpack-vue-demo/dev-status.svg" alt="devDependency Status">
-    </a>
-    <a href="https://codecov.io/gh/phiphou/webpack-vue-demo">
-      <img src="https://codecov.io/gh/phiphou/webpack-vue-demo/branch/master/graph/badge.svg" alt="codecov">
-    </a>
-    <a href="http://opensource.org/licenses/MIT">
-      <img src="https://img.shields.io/badge/Licence-MIT-blue.svg" alt="MIT license">
-    </a>
-    <a href="#" style="text-decoration:none">
-      <img src="https://reposs.herokuapp.com/?path=phiphou/webpack-vue-demo" alt="Size">
-    </a>
-</p>
-<p align="center">
-  <a href="https://saucelabs.com/u/phiphou"><img src="https://saucelabs.com/browser-matrix/phiphou.svg" alt="Browser Matrix"></a>
-</p>
+[![CircleCI](https://img.shields.io/circleci/project/phiphou/webpack-es6-demo.svg?maxAge=0)](https://circleci.com/gh/phiphou/webpack-es6-demo)
+[![GitHub version](https://badge.fury.io/gh/phiphou%2Fwebpack-es6-demo.svg)](https://badge.fury.io/gh/phiphou%2Fwebpack-es6-demo)
+[![Dependency Status](https://david-dm.org/phiphou/webpack-es6-demo.svg)](https://david-dm.org/phiphou/webpack-es6-demo)
+[![devDependency Status](https://david-dm.org/phiphou/webpack-es6-demo/dev-status.svg)](https://david-dm.org/phiphou/webpack-es6-demo?type=dev)
+[![codecov](https://codecov.io/gh/phiphou/webpack-es6-demo/branch/master/graph/badge.svg)](https://codecov.io/gh/phiphou/webpack-es6-demo)
+[![MIT license](https://img.shields.io/badge/Licence-MIT-blue.svg)](http://opensource.org/licenses/MIT)
+[![Size](https://reposs.herokuapp.com/?path=phiphou/webpack-es6-demo)](#)
 
-# webpack-vue-demo
+# webpack-es6-demo
 
-A very basic but complete demo project that use [VueJs](http://babeljs.io/) as front-end framework (with [Vue-resource](https://github.com/pagekit/vue-resource), [Vue-router](https://github.com/vuejs/vue-router) and [VueX](https://github.com/vuejs/vuex)), [Babel](http://babeljs.io/) for [ES6](http://www.ecma-international.org/ecma-262/6.0/)/[ES7](http://www.ecma-international.org/ecma-262/7.0/) transpilation, [Webpack2](http://webpack.github.io/) as module bundler, [SASS](http://sass-lang.com/) as CSS preprocessor, [Karma](https://karma-runner.github.io/1.0/), [Mocha](http://mochajs.org/) and [Chai](http://chaijs.com/) for unit tests, [nightwatch](http://nightwatchjs.org/) for e2e tests and finally [Istanbul](https://github.com/gotwarlost/istanbul) for code coverage.
+A very basic but complete demo project that use [Babel](http://babeljs.io/) for [ES6](http://www.ecma-international.org/ecma-262/6.0/) transpilation, [Webpack2](http://webpack.github.io/) as module loader, [SASS](http://sass-lang.com/) as a CSS preprocessor, [Karma](https://karma-runner.github.io/1.0/), [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), [chai-as-promised](http://chaijs.com/plugins/chai-as-promised/), [Sinon](http://sinonjs.org/), [sinon-stub-promise](https://github.com/substantial/sinon-stub-promise) for tests, and [Istanbul](https://github.com/gotwarlost/istanbul) for code coverage.
 
 ## Quick Start
 
 ```bash
-$ git clone --depth 1 https://github.com/phiphou/webpack-vue-demo.git
-$ cd webpack-vue-demo
+$ npm i -g webpack webpack-dev-server karma-cli rimraf
+$ git clone --depth 1 https://github.com/phiphou/webpack-es6-demo.git
+$ cd webpack-es6-demo
 $ npm install
 $ npm run start
 ```
 
-Your default browser should open at [http://127.0.0.1:8080](http://127.0.0.1:8080), then you can start developing in [`./src/app/main.js`](https://github.com/phiphou/webpack-vue-demo/blob/master/src/app/main.js)
+Your default browser should open at [http://127.0.0.1:8080](http://127.0.0.1:8080), then you can start developing in [`./src/app/main.js`](https://github.com/phiphou/webpack-es6-demo/blob/master/src/app/main.js)
 
 ## Table of contents
  * [Quick Start](#quick-start)
- * [Install](#install)
+ * [Installing](#installing)
+   * [Global dependencies](#global-dependencies)
+   * [Install](#install)
  * [Usage](#usage)
-   * [Development](#start-developping)
+   * [Development](#start-developing)
    * [Building](#building)
    * [Testing](#testing)
-     * [Unit tests](#unit-tests)
-     * [E2E tests](#e2e-tests)
-     * [Coverage](#coverage)
-   * [Continuous integration](#continuous-integration)
  * [License](#license)
 
-## Install
+## Installing
 
 First, make sure you've got [NodeJS](http://nodejs.org) installed. If not, go to [nodejs.org](http://nodejs.org) to download and install it. It will also install NPM.
 
 If everything is ok, `node -v` should print your node version and `npm -v` should print NPM's one. Minimum requirements for this project are node >= `5.x.x` and NPM >= `3.x.x`.
 
-Then, clone or fork this repo and run `npm install` to install the application.
+### Global dependencies
+
+Before installing the application, you may have to install some global dependencies.
+
+| Dependency                                         | Version       | Install                       |
+| :------------------------------------------------- | :------------ | :---------------------------- |
+| [Webpack](http://webpack.github.io)                | 2.1.0-beta.25 | `npm i webpack -g`            |
+| [Rimraf](https://github.com/isaacs/rimraf)         | 2.5.x         | `npm i rimraf -g`             |
+| [Karma](https://github.com/karma-runner/karma-cli) | 1.3.x         | `npm i karma-cli -g`          |
+| [Webpack dev server](http://webpack.github.io)     | 2.1.0-beta.0  | `npm i webpack-dev-server -g` |
+
+You can also install all these dependencies in just one command :
+
+`$ npm i -g webpack webpack-dev-server karma-cli rimraf`
+
+### Install
+
+Clone or fork this repo and run `npm install` to install the application.
 
 ```bash
-$ git clone https://github.com/phiphou/webpack-vue-demo.git
-$ cd webpack-vue-demo
+$ git clone https://github.com/phiphou/webpack-es6-demo.git
+$ cd webpack-es6-demo
 $ npm install
 ```
 Dependencies will be installed in the `./node_modules` folder.
 
-You can also use the new **[Yarn](https://yarnpkg.com/)** package manager.
-
-```bash
-$ yarn
-```
-
 ## Usage
 
-### Start developping
+#### Start developping
 
 Dive into development right now by just running:
 ```bash
 $ npm run start
 ```
 
-This will pre-build the application, start webpack's dev server and open your browser at [http://127.0.0.1:8080](http://127.0.0.1:8080). Then, have a look at [`./src/app/main.js`](https://github.com/phiphou/webpack-vue-demo/blob/master/src/app/main.js).
+This will pre-build the application, start webpack's dev server and open your browser at [http://127.0.0.1:8080](http://127.0.0.1:8080). Then, have a look at [`./src/app/main.js`](https://github.com/phiphou/webpack-es6-demo/blob/master/src/app/main.js).
 
-### Building
+#### Building
 
 You can build the app and get a "ready to deploy" release by just running:
 
@@ -95,56 +86,22 @@ $ npm run prod
 
 You'll find your build in the `./dist` directory
 
-### Testing
-
-#### Unit-tests
+#### Testing
 
 [Karma](https://karma-runner.github.io/0.13/index.html) is used as test-runner, you can configure it in the [`./config/karma/karma.conf.js`](/config/karma/karma.conf.js) file.
-
 You can run tests by just typing :
 
 ```bash
 $ npm run test
 ```
 
-Tests are written in ES6 for [Mocha](http://mochajs.org/) and use [Chai](http://chaijs.com/) and [chai-as-promised](http://chaijs.com/plugins/chai-as-promised/).
-
-Unit-tests are located in the `./test/unit/` folder and reports are available in the `./reports/unit` folder, in [JUnit](http://junit.org/junit4/) format and HTML report.
-
-#### E2E-tests
-
-[NightwatchJs](http://www.nightwatchjs.org) is used as E2E-tests test-runner, you can configure it in the [`./config/nightwatch.js`](/config/nightwatch.js) file.
-
-E2E-tests are located in the `./test/e2e/` folder.
-
-You can run e2e tests by just typing :
-
-```bash
-$ npm run e2e
-```
-
-Chrome browser is used as default config, but you can override this by running:
-
-```bash
-$ npm run e2e -- --env [chrome],[firefox]
-```
-
-Reports are available in the `./reports/e2e` folder in [JUnit](http://junit.org/junit4/) format and HTML report. In case of failed test(s), you'll find screenshots in the `./reports/e2e/screenshots` folder.
+Tests are written in ES6 for [Mocha](http://mochajs.org/) and use [Chai](http://chaijs.com/), [chai-as-promised](http://chaijs.com/plugins/chai-as-promised/), [Sinon](http://sinonjs.org/) and  [sinon-stub-promise](https://github.com/substantial/sinon-stub-promise).
 
 #### Code coverage
 
 [Istanbul](https://github.com/gotwarlost/istanbul) is used as code coverage tool. You can configure it in the [`./config/karma/karma.conf.js`](/config/karma/karma.conf.js) file.
 
-It will produce reports you'll find in the `./reports/coverage/[browser_name]/` folder (index.html) each time you run unit-tests.
-
-It will also generate [LCOV format](http://ltp.sourceforge.net/coverage/lcov.php) report in the `./reports/coverage/[browser_name]` folder.
-
-
-### Continuous integration
-
-[CircleCI](https://circleci.com/) is used for continuous integration, [Codecov](https://codecov.io) for coverage and [SauceLabs](https://saucelabs.com/) for cross-browsers testing.
-
-See [`./circleci.yml`](/circle.yml) and badges at the top of this document.
+It will produce reports you'll find in the `./coverage` folder each time you run unit-tests.
 
 ## License
 
